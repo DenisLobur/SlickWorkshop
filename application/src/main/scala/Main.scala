@@ -6,7 +6,7 @@ import scala.concurrent.duration._
 
 object Main {
   val db = Database.forURL(
-    "jdbc:postgresql://127.0.0.1/filmoteka?user=postgres&password=root"
+    "jdbc:postgresql://127.0.0.1/movies?user=postgres&password=123456789"
   )
 
   val countryRepository = new CountryRepository(db)
