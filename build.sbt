@@ -2,11 +2,13 @@ val globalSettings = Seq[SettingsDefinition](
   version := "0.1",
   scalaVersion := "2.12.4"
 )
+// adding remote project
+//lazy val depProject = ProjectRef(uri("https://github.com/tumblr/colossus.git@master"), "colossus")
 
-val model = Project("model", file("model"))
+val model = project.in(file("model"))
   .settings(globalSettings: _*)
 
-val repositories = Project("repositories", file("repositories"))
+val repositories = project.in(file("repositories"))
   .dependsOn(model)
   .settings(globalSettings: _*)
   .settings(
@@ -18,7 +20,7 @@ val repositories = Project("repositories", file("repositories"))
     )
   )
 
-val application = Project("application", file("application"))
+val application = project.in(file("application"))
   .dependsOn(repositories)
   .settings(globalSettings: _*)
 

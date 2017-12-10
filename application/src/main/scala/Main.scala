@@ -15,7 +15,7 @@ object Main {
   val filmRepository = new FilmRepository(db)
 
   def main(args: Array[String]): Unit = {
-//    init()
+    //init()
     databaseFill()
   }
 
