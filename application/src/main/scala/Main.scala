@@ -29,6 +29,7 @@ object Main {
     Await.result(db.run(FilmToCountryTable.table.schema.create), Duration.Inf)
   }
 
+
   def databaseFill(): Unit = {
     for (i <- 1 to 5) {
       Await.result(countryRepository.create(Country(Some(i), s"Country #$i")), Duration.Inf)
