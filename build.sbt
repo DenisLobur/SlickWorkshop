@@ -22,7 +22,11 @@ val repositories = project.in(file("repositories"))
 
 val application = project.in(file("application"))
   .dependsOn(repositories)
-  .settings(globalSettings: _*)
+  .settings(libraryDependencies ++= Seq(
+    "com.typesafe.akka" %% "akka-http" % "10.0.11",
+    "com.typesafe.akka" %% "akka-stream" % "2.5.7",
+    "com.typesafe.akka" %% "akka-actor" % "2.5.7"
+  ))
 
 val root = Project("slick_workshop", file("."))
-    .aggregate(application)
+  .aggregate(application)
