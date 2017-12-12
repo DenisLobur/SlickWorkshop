@@ -1,3 +1,16 @@
+import model._
+import slick.jdbc.PostgresProfile.api._
+import scala.concurrent.Await
+import scala.concurrent.duration._
+
+trait MyDatabases {
+  val db = Database.forURL(
+    "jdbc:postgresql://127.0.0.1/filmoteka?user=postgres&password=root"
+  )
+
+  val filmRepository = new FilmRepository(db)
+}
+
 //import model._
 //import slick.jdbc.PostgresProfile.api._
 //

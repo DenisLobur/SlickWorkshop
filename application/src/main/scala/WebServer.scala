@@ -13,7 +13,7 @@ object WebServer extends ApiRouter {
 
     //    checkDatabase()
     val bindingFuture = Http().bindAndHandle(routes, "localhost", 1235)
-    println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
+    println(s"Server online at http://localhost:1235/\nPress RETURN to stop...")
     StdIn.readLine() // let it run until user presses return
     bindingFuture
       .flatMap(_.unbind())
